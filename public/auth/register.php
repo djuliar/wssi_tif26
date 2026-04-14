@@ -46,7 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label>Password:</label><br>
         <input type="password" name="password" required><br><br>
 
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
     </form>
+    Sudah punya akun? <a href="login.php">Login di sini</a>
 </body>
 </html>
