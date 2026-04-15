@@ -29,6 +29,15 @@
 	<!-- Template Main CSS File -->
 	<link href="../backend/assets/css/style.css" rel="stylesheet">
 
+	<style>
+		body {
+			background: url('../backend/assets/img/bg-pattern.png');
+			background-size: 35%;
+			background-color: rgba(255, 255, 255, 0.9);
+			background-blend-mode: lighten;
+		}
+	</style>
+
 	<!-- =======================================================
 	* Template Name: NiceAdmin
 	* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -90,7 +99,10 @@
 
 									<?php if (isset($_SESSION['success'])) : ?>
 										<div class="alert alert-success alert-dismissible fade show" role="alert">
-											<?php echo $_SESSION['success'] ?>
+											<?php
+											echo $_SESSION['success'];
+											unset($_SESSION['success']);
+											?>
 											<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 										</div>
 									<?php endif; ?>

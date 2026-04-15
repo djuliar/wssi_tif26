@@ -29,6 +29,15 @@
 	<!-- Template Main CSS File -->
 	<link href="../backend/assets/css/style.css" rel="stylesheet">
 
+	<style>
+		body {
+			background: url('../backend/assets/img/bg-pattern.png');
+			background-size: 35%;
+			background-color: rgba(255, 255, 255, 0.9);
+			background-blend-mode: lighten;
+		}
+	</style>
+
 	<!-- =======================================================
 	* Template Name: NiceAdmin
 	* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
