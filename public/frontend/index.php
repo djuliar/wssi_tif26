@@ -37,11 +37,11 @@
 </head>
 
 <body class="index-page">
-	<?php include 'header.php'; ?>
+	<?php include 'layouts/_header.php'; ?>
 	<main class="main">
-			<?php include 'content.php'; ?>
+			<?php include 'layouts/_content.php'; ?>
 	</main>
-	<?php include 'footer.php'; ?>
+	<?php include 'layouts/_footer.php'; ?>
 
 			<!-- Scroll Top -->
 	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
