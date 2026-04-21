@@ -51,9 +51,9 @@ AccessControl::isLoggedIn();
 
 <body>
 	
-	<?php include '_header.php'; ?>
+	<?php include 'layouts/_header.php'; ?>
 	
-	<?php include '_sidebar.php'; ?>
+	<?php include 'layouts/_sidebar.php'; ?>
 	
 	<main id="main" class="main">
 		<div class="pagetitle">
@@ -67,10 +67,10 @@ AccessControl::isLoggedIn();
 			</nav>
 		</div><!-- End Page Title -->
 
-		<?php include '_content.php'; ?>
+		<?php include 'layouts/_content.php'; ?>
 	</main><!-- End #main -->
 
-	<?php include '_footer.php'; ?>
+	<?php include 'layouts/_footer.php'; ?>
 	
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
