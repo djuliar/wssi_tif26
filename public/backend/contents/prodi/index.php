@@ -6,11 +6,11 @@
 			<div class="col-12">
 				<div class="card recent-sales overflow-auto">
 					<div class="card-body">
-						<h5 class="card-title">Program Studi</h5>
+						<!-- <h5 class="card-title">Program Studi</h5> -->
 						
-						<a href="dashboard.php?page=prodi&action=create" class="btn btn-primary mb-3"><i class="bi bi-plus"></i>Tambah</a>
+						<a href="dashboard.php?page=prodi&action=create" class="btn btn-primary my-3"><i class="bi bi-plus"></i>Tambah</a>
 
-						<table id="tableProdi" width="100%" border="1" class="table table-bordered table-striped">
+						<table id="tableProdi" width="100%" border="0" class="table table-bordered table-striped table-hover">
 							<thead>
 								<tr>
 									<th>ID</th>
