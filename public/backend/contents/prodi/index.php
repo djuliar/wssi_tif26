@@ -49,7 +49,7 @@ $(document).ready(function() {
 		order: [[ 0, "desc" ]],
 		responsive: true,
         ajax: {
-            url: '../ajax/prodi.php',
+            url: 'contents/prodi/read.php',
             type: 'POST'
         },
         columns: [
