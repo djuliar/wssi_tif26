@@ -4,7 +4,7 @@
 		<div class="d-flex align-items-center justify-content-between">
 			<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>" class="logo d-flex align-items-center">
 				<img src="assets/img/logo.png" alt="">
-				<span class="d-none d-lg-block">Ws Sys Informasi</span>
+				<span class="d-none d-lg-block">WsSys Informasi</span>
 			</a>
 			<i class="bi bi-list toggle-sidebar-btn"></i>
 		</div><!-- End Logo -->

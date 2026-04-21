@@ -1,5 +1,5 @@
 <?php
-require_once '../../classes/AccessControl.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/AccessControl.php';
 session_start();
 
 AccessControl::isLoggedIn();

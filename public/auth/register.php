@@ -1,5 +1,5 @@
 <?php
-require_once '../../classes/AccessControl.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/AccessControl.php';
 session_start();
 
 AccessControl::isSessionActive();
@@ -53,8 +53,8 @@ AccessControl::isSessionActive();
 
 <body>
 	<?php
-	require_once '../../config/Database.php';
-	require_once '../../classes/Auth.php';
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/config/Database.php';
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Auth.php';
 
 	$db = new Database();
 	$conn = $db->getConnection();

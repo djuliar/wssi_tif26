@@ -1,5 +1,5 @@
 <?php
-require_once '../../classes/Session.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Session.php';
 
 $session = new Session();
 $session->destroy();

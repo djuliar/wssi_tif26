@@ -1,6 +1,6 @@
 <?php
-require_once '../../config/Database.php';
-require_once '../../classes/Prodi.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config/Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Prodi.php';
 
 $db = new Database();
 $conn = $db->getConnection();
