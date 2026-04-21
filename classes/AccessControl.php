@@ -14,5 +14,12 @@ class AccessControl {
             exit;
         }
     }
+
+    public static function isSessionActive() {
+        if (isset($_SESSION['user'])) {
+            header("Location: ../backend/dashboard.php");
+            exit;
+        }
+    }
 }
 ?>
