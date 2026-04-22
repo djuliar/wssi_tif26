@@ -12,6 +12,14 @@ function loadView($path) {
 
 if(@$_GET['page'] == 'dashboard') {
 	loadView('contents/home.php');
+} elseif(@$_GET['page'] == 'jurusan') {
+	if(@$_GET['action'] == 'create') {
+		loadView('contents/jurusan/create.php');
+	} elseif(@$_GET['action'] == 'edit') {
+		loadView('contents/jurusan/edit.php');
+	} else {
+		loadView('contents/jurusan/index.php');
+	}
 } elseif(@$_GET['page'] == 'prodi') {
 	if(@$_GET['action'] == 'create') {
 		loadView('contents/prodi/create.php');

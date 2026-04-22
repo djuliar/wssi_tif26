@@ -6,9 +6,9 @@ class User {
         $this->conn = $db;
     }
 
-    public function findByUsername($username) {
-        $stmt = $this->conn->prepare("SELECT * FROM users WHERE username=?");
-        $stmt->bind_param("s", $username);
+    public function findByEmail($email) {
+        $stmt = $this->conn->prepare("SELECT * FROM users WHERE email=?");
+        $stmt->bind_param("s", $email);
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();
     }

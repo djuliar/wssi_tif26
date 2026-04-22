@@ -1,7 +1,7 @@
 	<!-- ======= Sidebar ======= -->
 	<aside id="sidebar" class="sidebar">
 		<?php
-			$master = ['prodi', 'mahasiswa', 'dosen', 'matakuliah', 'kelas'];
+			$master = ['jurusan', 'prodi', 'mahasiswa', 'dosen', 'matakuliah', 'kelas'];
 			if (in_array(@$_GET['page'], $master)) {
 				$menu['master'] = true;
 			}
@@ -24,6 +24,11 @@
 				</a>
 				<ul id="components-nav" class="nav-content collapse <?php echo (isset($menu['master']) && $menu['master'] === true) ? 'show' : ''; ?>" data-bs-parent="#sidebar-nav">
                     <li>
+						<a href="dashboard.php?page=jurusan">
+							<i class="bi bi-circle"></i><span>Data Jurusan</span>
+						</a>
+					</li>
+					<li>
 						<a href="dashboard.php?page=prodi">
 							<i class="bi bi-circle"></i><span>Data Prodi</span>
 						</a>

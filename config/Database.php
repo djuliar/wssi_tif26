@@ -12,7 +12,9 @@ class Database {
     public function __construct() {
         // Membuat koneksi ke database dengan error handling
         try {
-            $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
+            $this->conn = new mysqli(
+                $this->host, $this->user, $this->pass, $this->db
+            );
         } catch (Exception $e) {
             die($e->getMessage());
         }
