@@ -1,8 +1,8 @@
 <?php
 class ApiService
 {
-    public function getApi() {
-        $url = "https://weather.ewalabs.com/api/v1?lat=-8.157654&lon=113.722846";
+    public function getData($lat, $lon) {
+        $url = "https://weather.ewalabs.com/api/v1?lat=".$lat."&lon=".$lon;
 
         $ch = curl_init();
 

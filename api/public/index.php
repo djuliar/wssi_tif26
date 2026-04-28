@@ -4,40 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Cuaca</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php
-    // require_once '../classes/Controller.php';
+    <div class="container">
+        <div class="row">
+            <h1>Data API Eksternal dari https://weather.ewalabs.com/</h1>
+        <?php
+            require_once '../classes/Controller.php';
 
-    // $controller = new Controller();
-    // // Koordinat contoh: Gedung JTI Polije
-    // $lat = -8.157654;
-    // $long = 113.722846;
+            $controller = new Controller();
+            // Koordinat contoh: Gedung JTI Polije
+            $lat = -8.157654;
+            $long = 113.722846;
 
-    // $weather = $controller->getWeather($lat, $long);
+            $weather = $controller->getWeather($lat, $long);
+            
+            if($weather['status'] == 'success') {
+                $cw = $weather['data'];
+                foreach($cw['forecast'] as $data) { ?>
 
-    // echo "<h2>Data Cuaca (Open-Meteo)</h2>";
-    // print_r($weather);
-    // if(isset($weather['current_weather'])){
-    //     $cw = $weather['current_weather'];
+                    <div class="card col-lg-4">
+                        <div class="card-body">
+                            <h1 class="card-title"><?= $data['temperature'] ?> °C</h1>
+                            <h3 class="card-title"><?= $data['weather'] ?></h3>
+                            <h6 class="card-subtitle mb-2 text-muted"><?= $cw['location'] ?></h6>
+                            <p class="card-text"><?= $controller->formatTanggalIndonesia($data['local_datetime']) ?></p>
+                            <ul>
+                                <li>Humidity: <?= $data['humidity']; ?></li>
+                                <li>Wind Speed: <?= $data['wind_speed']; ?></li>
+                                <li>Wind Direction: <?= $data['wind_direction']; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php }
+            } else {
+                echo "Data tidak tersedia";
+            }
+        ?>
+        </div>
+    </div>
 
-    //     echo "<table>";
-    //     echo "<tr><th>Parameter</th><th>Nilai</th></tr>";
-
-    //     echo "<tr><td>Suhu</td><td>{$cw['temperature']} °C</td></tr>";
-    //     echo "<tr><td>Kecepatan Angin</td><td>{$cw['windspeed']} km/h</td></tr>";
-    //     echo "<tr><td>Arah Angin</td><td>{$cw['winddirection']}°</td></tr>";
-    //     echo "<tr><td>Waktu</td><td>{$cw['time']}</td></tr>";
-
-    //     echo "</table>";
-    // } else {
-    //     echo "Data tidak tersedia";
-    // }
-
-    require_once '../classes/ApiService.php';
-    $apiService = new ApiService();
-    $data = $apiService->getApi(); // Koordinat dummy
-    echo print_r($data);
-    ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
