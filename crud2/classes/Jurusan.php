@@ -9,8 +9,9 @@ class Jurusan {
 
     public function getAll() {
         $query = "SELECT * FROM jurusan ORDER BY id DESC";
-        $result = $this->conn->query($query);
-        return $result;
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->get_result();
     }
 
     function create($kode_jurusan, $nama_jurusan) {
