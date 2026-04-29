@@ -1,8 +1,8 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json');
 
 require_once '../config/Database.php';
-require_once '../app/controllers/MahasiswaController.php';
+require_once '../classes/MahasiswaController.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -10,12 +10,12 @@ $mahasiswa = new MahasiswaController($db);
 
 switch($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        $mhs = $mahasiswa->read_data();
+        $mhs = $mahasiswa->getAll();
         $data = [
             'status' => 'success',
             'method' => 'GET',
             'message' => 'Data berhasil diambil',
-            'count' => $mhs->num_rows,
+			'count' => $mhs->num_rows,
             'data' => $mhs->fetch_all(MYSQLI_ASSOC),
         ];
         break;

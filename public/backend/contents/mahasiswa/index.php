@@ -19,17 +19,17 @@
 
             <div class="card overflow-auto">
                 <div class="card-body">
-                    <a href="dashboard.php?page=prodi&action=create" class="btn btn-primary my-3"><i class="bi bi-plus"></i>Tambah</a>
+                    <a href="dashboard.php?page=mahasiswa&action=create" class="btn btn-primary my-3"><i class="bi bi-plus"></i>Tambah</a>
 
-                    <table id="tableProdi" width="100%" border="0" class="table table-bordered table-striped table-hover">
+                    <table id="tableMahasiswa" width="100%" border="0" class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Kode Prodi</th>
-                                <th>Nama Prodi</th>
-                                <th>Jenjang</th>
+                                <th>NIM</th>
+                                <th>Nama Lengkap</th>
+                                <th>Program Studi</th>
                                 <th>Jurusan</th>
-                                <th>Aksi</th>
+                                <!-- <th>Aksi</th> -->
                             </tr>
                         </thead>
                     </table>
@@ -43,43 +43,26 @@
 
 <script>
 $(document).ready(function() {
-    $('#tableProdi').DataTable({
+    $('#tableMahasiswa').DataTable({
         processing: true,
         serverSide: true,
 		responsive: true,
 		order: [[ 0, "desc" ]],
         ajax: {
-            url: 'contents/prodi/read.php',
-            type: 'POST'
+            url: '../../_api/public/endpoint.php',
+            type: 'GET'
         },
         columns: [
             { data: 'id' },
-            { data: 'kode_prodi' },
+            { data: 'nim' },
+            { data: 'nama' },
             { data: 'nama_prodi' },
-            { data: 'jenjang' },
-            { data: 'jurusan' },
-            { data: 'action', orderable: false, searchable: false }
+            { data: 'nama_jurusan' }
+            // { data: 'action', orderable: false, searchable: false }
         ],
 		columnDefs: [
-			{ className: "dt-body-center", targets: [0, 3, 5] },
+			{ className: "dt-body-center", targets: [0, 1, 4] },
 		]
     });
-});
-
-$(document).on('click', '.btn-delete', function() {
-    let id = $(this).data('id');
-
-    if (confirm("Yakin ingin menghapus data ini?")) {
-        $.ajax({
-            url: 'contents/prodi/delete.php',
-            type: 'POST',
-            data: { id: id },
-            success: function(response) {
-                console.log(response);
-                $('#tableProdi').DataTable().ajax.reload();
-                window.location.reload();
-            }
-        });
-    }
 });
 </script>

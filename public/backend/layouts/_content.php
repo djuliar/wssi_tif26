@@ -29,7 +29,13 @@ if(@$_GET['page'] == 'dashboard') {
 		loadView('contents/prodi/index.php');
 	}
 } elseif(@$_GET['page'] == 'mahasiswa') {
-	loadView('contents/mahasiswa.php');
+	if(@$_GET['action'] == 'create') {
+		loadView('contents/mahasiswa/create.php');
+	} elseif(@$_GET['action'] == 'edit') {
+		loadView('contents/mahasiswa/edit.php');
+	} else {
+		loadView('contents/mahasiswa/index.php');
+	}
 } elseif(@$_GET['page'] == 'dosen') {
 	loadView('contents/dosen.php');
 } elseif(@$_GET['page'] == 'matakuliah') {

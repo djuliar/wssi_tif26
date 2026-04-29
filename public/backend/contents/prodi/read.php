@@ -13,7 +13,6 @@ $request = $_POST;
 $data = $model->getData($request);
 
 $response = [
-    "draw" => intval(@$request['draw']),
     "recordsTotal" => $model->countAll(),
     "recordsFiltered" => $model->countFiltered(@$request['search']['value']),
     "data" => $data
